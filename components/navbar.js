@@ -8,8 +8,15 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import Image from "next/image";
-import Logo from "../public/logo.png";
+import Logo from "../assets/logo.png";
+import { useState } from "react";
+import {useRouter} from 'next/router'
 const navbar = () => {
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const router = useRouter();
+  
+
   return (
     <div>
       <div className="bg-gray-100 ">
@@ -17,11 +24,11 @@ const navbar = () => {
           <div className="lg:flex lg:flex-row flex flex-col justify-center items-center space-x-12 lg:space-y-0 space-y-2">
             <div className="flex flex-row space-x-2">
               <FaMapMarkerAlt className="w-5 h-5 text-gray-500" />
-              <p>2507 Parker Boulevard, Oakland, CA 76107</p>
+              <p>Unit 3 Building#65, District 3, jiangnan, Yiwu</p>
             </div>
             <div className="flex flex-row space-x-2">
               <FaMobileAlt className="w-5 h-5 text-gray-500" />
-              <p> (0481) 123 987 2411</p>
+              <p> (+86) 579 899 693 33 </p>
             </div>
             <div className="flex flex-row space-x-2">
               <FaRegClock className="w-5 h-5 text-gray-500" />
@@ -37,12 +44,14 @@ const navbar = () => {
       </div>
       <nav className=" px-2 sm:px-4 py-5 ">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <Link href="/">
-            <a href="#" className="flex">
-              <Image src={Logo} alt="Logo" />
-            </a>
-          </Link>
-          <div className="flex md:order-2">
+          <div className="my-5 sm:my-0 w-full sm:w-auto flex justify-center">
+            <Link href="/" >
+              <a href="#" className="flex">
+                <Image width={180} height={110} src={Logo} alt="Logo" />
+              </a>
+            </Link>
+          </div>
+          <div className="flex w-full sm:w-auto justify-center sm:justify-start md:order-2">
             <button
               type="button"
               className="text-gray-700 hover:text-white hover:bg-yellow-600 border-2 border-yellow-500   rounded-3xl  px-5 py-2.5 text-center mr-3 md:mr-0 "
@@ -50,6 +59,7 @@ const navbar = () => {
               GET A QUOTE
             </button>
             <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
               data-collapse-toggle="mobile-menu-4"
               type="button"
               className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -83,16 +93,15 @@ const navbar = () => {
               </svg>
             </button>
           </div>
-          <div
-            className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-            id="mobile-menu-4"
-          >
+          {/* Mobile Menu */}
+          {
+            showMobileMenu && <div className="flex w-full my-5 justify-center" id="mobile-menu-4">
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0  ">
               <li>
                 <Link href="/">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-yellow-600  md:hover:text-yellow-500 md:p-0 "
+                    className={`block py-2 pr-4 md:hover:text-yellow-500 pl-3 ${router.pathname=="/"?"text-yellow-600  ":"text-gray-500"} md:p-0`}
                     aria-current="page"
                   >
                     HOME
@@ -103,7 +112,7 @@ const navbar = () => {
                 <Link href="/aboutus">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-500   md:hover:text-yellow-500 md:p-0 "
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/aboutus"?"text-yellow-600  ":"text-gray-500"}   md:hover:text-yellow-500 md:p-0 `}
                   >
                     ABOUT
                   </a>
@@ -113,7 +122,7 @@ const navbar = () => {
                 <Link href="/services">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-500   md:hover:text-yellow-500 md:p-0 "
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/services"?"text-yellow-600  ":"text-gray-500"}   md:hover:text-yellow-500 md:p-0`}
                   >
                     SERVICES
                   </a>
@@ -123,7 +132,56 @@ const navbar = () => {
                 <Link href="/contact">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-gray-500  md:hover:text-yellow-500 md:p-0 "
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/contact"?"text-yellow-600  ":"text-gray-500"}  md:hover:text-yellow-500 md:p-0`}
+                  >
+                    CONTACT
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          }
+          <div
+            className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+            id="mobile-menu-4"
+          >
+            <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0  ">
+            <li>
+                <Link href="/">
+                  <a
+                    href="#"
+                    className={`block py-2 pr-4 md:hover:text-yellow-500 pl-3 ${router.pathname=="/"?"text-yellow-600  ":"text-gray-500"} md:p-0`}
+                    aria-current="page"
+                  >
+                    HOME
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/aboutus">
+                  <a
+                    href="#"
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/aboutus"?"text-yellow-600  ":"text-gray-500"}   md:hover:text-yellow-500 md:p-0 `}
+                  >
+                    ABOUT
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services">
+                  <a
+                    href="#"
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/services"?"text-yellow-600  ":"text-gray-500"}   md:hover:text-yellow-500 md:p-0`}
+                  >
+                    SERVICES
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a
+                    href="#"
+                    className={`block py-2 pr-4 pl-3 ${router.pathname=="/contact"?"text-yellow-600  ":"text-gray-500"}  md:hover:text-yellow-500 md:p-0`}
                   >
                     CONTACT
                   </a>

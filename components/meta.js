@@ -14,9 +14,9 @@ const Meta = ({ title, keywords, description }) => {
 };
 
 Meta.defaultProps = {
-  title: "Driver Company",
-  keywords: "Driver taxi, Germany",
-  description: "Get the latest news in web dev",
+  title: "Yiwu Sheikh Trading",
+  keywords: "Shipping, Yiwu",
+  description: "Yiwu Sheikh Trading: Your reliable shipping partner in Yiwu. Explore seamless logistics solutions, international freight, and efficient shipping services from China's vibrant trade hub. Connect for reliable global shipping today!",
 };
 
 export default Meta;

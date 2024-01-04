@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -23,14 +23,14 @@ const header = () => {
           <div
             className="h-screen bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url(/img01.jpg)`,
+              backgroundImage: `url(/home/home1.jpg)`,
             }}
           >
             <div className="h-screen bg-black bg-opacity-10 ">
               <div className="h-screen flex flex-col justify-center items-center space-y-6">
-                <p className="text-7xl text-white "> First Class . WorldWide</p>
+                <p className="text-7xl text-white ">Premier Performance: International Scope</p>
                 <p className="text-2xl font-light text-white ">
-                  A chauffer Service for Any Purpose
+                  Pioneering First-Class Shipment Solutions Globally.
                 </p>
                 <button
                   type="button"
@@ -46,14 +46,14 @@ const header = () => {
           <div
             className="h-screen bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url(/img02.jpg)`,
+              backgroundImage: `url(/home/home2.jpg)`,
             }}
           >
             <div className="h-screen bg-black bg-opacity-10 ">
               <div className="h-screen flex flex-col justify-center items-center space-y-6">
-                <p className="text-7xl text-white "> First Class . WorldWide</p>
+                <p className="text-7xl text-white "> Supreme Standards: Global Reach</p>
                 <p className="text-2xl font-light text-white ">
-                  A chauffer Service for Any Purpose
+                Your First-Class Choice for Global Shipments
                 </p>
                 <button
                   type="button"
@@ -69,14 +69,14 @@ const header = () => {
           <div
             className="h-screen bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url(/img03.jpg)`,
+              backgroundImage: `url(/home/home4.jpg)`,
             }}
           >
             <div className="h-screen bg-black bg-opacity-10 ">
               <div className="h-screen flex flex-col justify-center items-center space-y-6">
-                <p className="text-7xl text-white "> First Class . WorldWide</p>
+                <p className="text-7xl text-white ">Elite Excellence: Worldwide Coverage</p>
                 <p className="text-2xl font-light text-white ">
-                  A chauffer Service for Any Purpose
+                Where Global Shipments Reach First-Class Heights.
                 </p>
                 <button
                   type="button"
