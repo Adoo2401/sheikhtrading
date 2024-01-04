@@ -63,7 +63,7 @@ const Contact = () => {
               />
             </div>
             <div className="col-span-1 row-span-3 p-4  border">
-              <label forHtml="message" className="block mb-2  text-gray-900 ">
+              <label htmlFor="message" className="block mb-2  text-gray-900 ">
                 Your message
               </label>
               <textarea
