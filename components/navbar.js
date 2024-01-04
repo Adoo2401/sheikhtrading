@@ -11,7 +11,7 @@ import Image from "next/image";
 import Logo from "../assets/logo.png";
 import { useState } from "react";
 import {useRouter} from 'next/router'
-const navbar = () => {
+const Navbar = () => {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const router = useRouter();
@@ -194,4 +194,4 @@ const navbar = () => {
     </div>
   );
 };
-export default navbar;
+export default Navbar;
