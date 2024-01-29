@@ -53,7 +53,7 @@ const footer = () => {
               <Image src={Logo} alt="Logo" />
 
               <p className="text-gray-500">
-              Yiwu Sheikh Trading: Your reliable shipping partner in Yiwu. Explore seamless logistics solutions, international freight, and efficient shipping services from China's vibrant trade hub. Connect for reliable global shipping today!
+                {`Yiwu Sheikh Trading: Your reliable shipping partner in Yiwu. Explore seamless logistics solutions, international freight, and efficient shipping services from China's vibrant trade hub. Connect for reliable global shipping today!`}
               </p>
             </div>
             <div className="col-span-1 space-y-8">
